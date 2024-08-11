@@ -1,17 +1,20 @@
 # Rifa
 ## Tecnologias:
-NodeJS
+
 ### Backend:
+- NodeJS
 - Framework Express
 - Pacote Sequelize para migrations
 
 ### Frontend:
+- NodeJS
 - React
 
 ### Banco de Dados
 - PostgreSQL
 - Container Docker com Docker-compose
-
+OBS: Os dados das pastas "database_data" e "postgres_transferencias" precisam de permissão para serem alteradas.  
+  
 
 Página de sorteio, com banco de dados em Docker, Node com Express, React, Autenticação e outros.
 
@@ -37,7 +40,7 @@ npx sequelize-cli db:migrate
 npm start
 ```
 
-5. No servidor UI Reacti instale as dependências
+5. No servidor UI React instale as dependências
 ```
 npm install
 ```
