@@ -1,3 +1,5 @@
+![Takatsu's Projects](./documentacao_imagens/takatsu-projects.png)
+  
 # Rifa
 ## Tecnologias:
 
@@ -50,8 +52,9 @@ npm install
 ```
 npm start
 ```
-
-
+  
+  
+![DER do projeto](./documentacao_imagens/der.jpeg)
 
 
 

@@ -1,0 +1,11 @@
+.HeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 42px;
+}
+
+.mainBannerImg {
+    width: 414px;
+    height: 74px;
+}

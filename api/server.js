@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
+
 // Sincronizar modelos com o banco de dados
 models.sequelize.sync().then(() => {
   app.listen(3001, () => {

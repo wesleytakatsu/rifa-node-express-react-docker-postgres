@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Botao from '../components/Botao';
 import TopBar from '../components/TopBar';
 import Footer from '../components/Footer';
+import HeaderBar from '../components/HeaderBar';
 
 import BuscarPedidosForm from '../components/BuscarPedidosForm';
 
@@ -19,6 +20,9 @@ function App() {
     return (
         <div>
             <TopBar />
+            <HeaderBar />
+
+
             <h1>Exemplo de Uso do Botão</h1>
 
             <Botao 
