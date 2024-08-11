@@ -12,7 +12,7 @@
 
 ### Banco de Dados
 - PostgreSQL
-- Container Docker com Docker-compose
+- Container Docker com Docker-compose  
 OBS: Os dados das pastas "database_data" e "postgres_transferencias" precisam de permissão para serem alteradas.  
   
 
