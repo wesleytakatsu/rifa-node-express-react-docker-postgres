@@ -1,0 +1,28 @@
+
+.BuscarPedidosForm {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.formTextInput {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #707070;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    margin-right: 2%;
+}
+
+.formButton {
+    width: 18%;
+    background-color: #2FC57D;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    cursor: pointer;
+}

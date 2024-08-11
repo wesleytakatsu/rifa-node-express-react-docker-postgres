@@ -1,0 +1,17 @@
+/* Arquivo de estilo do componente Footer */
+/* absolut booton*/
+
+.Footer {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}

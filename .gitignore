@@ -1,0 +1,7 @@
+
+api/node_modules
+
+postgres/database_data/*
+postgres/postgres_transferencias/*
+
+ui/node_modules
