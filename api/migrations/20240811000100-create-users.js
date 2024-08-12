@@ -24,7 +24,7 @@ module.exports = {
         allowNull: false
       },
       whatsapp: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         unique: true,
         allowNull: false
       },
