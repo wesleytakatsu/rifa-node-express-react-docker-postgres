@@ -63,7 +63,7 @@ npm start
 ## Índice
 1. [Autenticação](#autenticação)
 2. [Usuários](#usuários)
-3. [Rifa](#rifa)
+3. [Rifas](#rifas)
 
 ## Autenticação
 
@@ -156,7 +156,7 @@ npm start
     }
     ```
 
-## Rifa
+## Rifas
 ### Criar Rifa
 - **Método:** POST
 - **Endpoint:** `/api/rifas/`
