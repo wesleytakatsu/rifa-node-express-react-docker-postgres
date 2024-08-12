@@ -67,27 +67,66 @@ npm start
 
 ## Autenticação
 
-### Login
+
+### Registro
 - **Método:** POST
-- **Endpoint:** `/login`
+- **Endpoint:** `/auth/Register`
 - **Descrição:** Autentica um usuário e gera um token JWT.
 - **Requisitos:** 
-  - `username` (string, obrigatório)
+  - `email` (string, único, obrigatório)
+  - `password` (string, min 6 caracteres, obrigatório)
+  - `cpf` (string, 11 caracteres, único, obrigatório)
+  - `whatsapp` (string, 11 a 14 caracteres, único, obrigatório)
+- **Resposta de Sucesso:**
+  - **Código:** 200 OK
+  - **Corpo:** 
+    ```json
+    {
+      "email":"teste@teste.org.br",
+      "cpf":"12345678912",
+      "password":"123456",
+      "whatsapp":"21987654321"
+    }
+    ```
+- **Resposta de Erro:**
+  - **Código:** 500
+  - **Corpo:** 
+    ```json
+    {
+      "error": "Validation error"
+    }
+    ```
+
+### Login
+- **Método:** POST
+- **Endpoint:** `/auth/login`
+- **Descrição:** Autentica um usuário e gera um token JWT.
+- **Requisitos:** 
+  - `email` (string, obrigatório)
   - `password` (string, obrigatório)
 - **Resposta de Sucesso:**
   - **Código:** 200 OK
   - **Corpo:** 
     ```json
     {
-      "token": "jwt_token"
+      "email":"teste2@teste.org.br",
+      "password":"123456"
     }
     ```
-- **Resposta de Erro:**
-  - **Código:** 401 Unauthorized
+  **Resposta de Sucesso**
+  - **Código:** 200 OK
+  **Corpo:** 
+    ```
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzIzNDgyMTY2LCJleHAiOjE3MjM0ODU3NjZ9.yOBm5FhaQlEV_Y6pwu1sMIdQYrXVRw3I2Kq6Tz0xPEQ"
+    }
+    ```
+  - **Resposta de Erro:**
+  - **Código:** 404 Not Found
   - **Corpo:** 
     ```json
     {
-      "message": "Credenciais inválidas"
+      "error": "User not found"
     }
     ```
 
@@ -95,7 +134,7 @@ npm start
 
 ### Obter Informações do Usuário
 - **Método:** GET
-- **Endpoint:** `/user`
+- **Endpoint:** `/users`
 - **Descrição:** Obtém informações do usuário logado.
 - **Requisitos:** 
   - Cabeçalho: `Authorization: Bearer <token>`
@@ -118,6 +157,64 @@ npm start
     ```
 
 ## Rifa
+### Criar Rifa
+- **Método:** POST
+- **Endpoint:** `/api/rifas/`
+- **Descrição:** Permite a criação de uma nova rifa.
+- **Requisitos:** 
+  - Cabeçalho: `Authorization: Bearer <token>`
+  - Corpo:
+    ```json
+    {
+      "quant_numeros":"1000",
+      "valor_cota":"0.25",
+      "premio":"500",
+      "data_sorteio":"2024-08-15",
+      "quant_sorteados":"100"
+    }
+    ```
+- **Resposta de Sucesso:**
+  - **Código:** 201 CREATED
+  - **Corpo:** 
+    ```json
+    {
+      "executado": false,
+      "id": 1,
+      "quant_numeros": 1000,
+      "valor_cota": 0.25,
+      "premio": 500,
+      "data_sorteio": "2024-08-15T00:00:00.000Z",
+      "quant_sorteados": 100,
+      "updatedAt": "2024-08-12T19:21:49.005Z",
+      "createdAt": "2024-08-12T19:21:49.005Z"
+    }
+    ```
+
+### Listar Rifas
+- **Método:** GET
+- **Endpoint:** `/api/rifas/`
+- **Descrição:** Lista todas as rifas criadas com seus detalhes.
+- **Requisitos:** 
+  - Cabeçalho: `Authorization: Bearer <token>`
+
+- **Resposta de Sucesso:**
+  - **Código:** 200 OK
+  - **Corpo:** 
+    ```json
+    [
+      {
+        "id": 1,
+        "quant_numeros": 1000,
+        "quant_sorteados": 100,
+        "valor_cota": 0.25,
+        "premio": 500,
+        "data_sorteio": "2024-08-15T00:00:00.000Z",
+        "executado": false,
+        "createdAt": "2024-08-12T19:21:49.005Z",
+        "updatedAt": "2024-08-12T19:21:49.005Z"
+      }
+    ]
+    ```
 
 ### Comprar Número de Rifa
 - **Método:** POST

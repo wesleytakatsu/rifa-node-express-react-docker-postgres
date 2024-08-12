@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     executado: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
   }, {
     sequelize,

@@ -16,6 +16,16 @@ app.use('/auth', authRoutes);
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
+const rifaRoutes = require('./routes/rifas');
+app.use('/api/rifas', rifaRoutes);
+
+const compraItens = require('./routes/compraItens');
+app.use('/api/compraItens', compraItens);
+
+const compras = require('./routes/compras');
+app.use('/api/compra', compras);
+
+
 // Sincronizar modelos com o banco de dados
 models.sequelize.sync().then(() => {
   app.listen(3001, () => {
